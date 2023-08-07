@@ -3,7 +3,7 @@ name: Generate design tokens
 on:
   repository_dispatch:
     types: update-tokens
-  
+
   push:
     branches:
       - master
@@ -36,7 +36,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Create PR
       - uses: actions/checkout@v3
         with:
           persist-credentials: false
