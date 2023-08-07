@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 07 Aug 2023 16:00:02 GMT
+ * Generated on Mon, 07 Aug 2023 16:01:14 GMT
  */
 
 module.exports = {
@@ -247,5 +247,17 @@ module.exports = {
   "ColorRose700": "#be123c",
   "ColorRose800": "#9f1239",
   "ColorRose900": "#881337",
-  "ColorRose950": "#4c0519"
+  "ColorRose950": "#4c0519",
+  "FontDisplayH1": {"fontSize":12,"textDecoration":"none","fontFamily":"Inter","fontWeight":400,"fontStyle":"normal","fontStretch":"normal","letterSpacing":0,"lineHeight":14.4,"paragraphIndent":0,"paragraphSpacing":0,"textCase":"none"},
+  "TypographyDisplayH1FontSize": 12,
+  "TypographyDisplayH1TextDecoration": "none",
+  "TypographyDisplayH1FontFamily": "Inter",
+  "TypographyDisplayH1FontWeight": 400,
+  "TypographyDisplayH1FontStyle": "normal",
+  "TypographyDisplayH1FontStretch": "normal",
+  "TypographyDisplayH1LetterSpacing": 0,
+  "TypographyDisplayH1LineHeight": 14.4,
+  "TypographyDisplayH1ParagraphIndent": 0,
+  "TypographyDisplayH1ParagraphSpacing": 0,
+  "TypographyDisplayH1TextCase": "none"
 };
