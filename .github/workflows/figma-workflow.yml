@@ -3,6 +3,10 @@ name: Generate design tokens
 on:
   repository_dispatch:
     types: update-tokens
+  
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -33,11 +37,21 @@ jobs:
         run: npm run build
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v4
+      - uses: actions/checkout@v3
         with:
-          commit-message: "style: Update design tokens"
-          title: ${{ github.event.client_payload.commitMessage || 'Update design tokens' }}
-          body: "Design tokens have been updated via Figma and need to be reviewed."
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_SECT }}
-          BRANCH_NAME: "master"
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "mayaraviana60@hotmail.com"
+          git config --local user.name "mayaraviana"
+          git add -A
+
+          git commit -m "Update design tokens"
+
+      - name: GitHub Push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          directory: "."
+          github_token: ${{ secrets.TOKEN_SECT }}
