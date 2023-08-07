@@ -16,6 +16,9 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
 
       - name: Create input JSON
         id: create-json
@@ -35,11 +38,6 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-          fetch-depth: 0
 
       - name: Commit changes
         run: |
